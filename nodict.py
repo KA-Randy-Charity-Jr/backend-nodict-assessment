@@ -14,7 +14,8 @@ class Node:
         self.value = value
 
     def __repr__(self):
-        """print a human-readable representation of its key/value contents when asked"""
+        """print a human-readable representation
+        of its key/value contents when asked"""
         return f'{self.__class__.__name__}({self.key}, {self.value})'
 
     def __eq__(self, other):
@@ -28,7 +29,8 @@ class Node:
 
 class NoDict:
     def __init__(self, num_buckets=10):
-        """class initializer to create the buckets according to a size parameter"""
+        """class initializer to create the
+        buckets according to a size parameter"""
         self.buckets = []
         for i in range(num_buckets):
             self.buckets.append([])
@@ -38,10 +40,12 @@ class NoDict:
     def __repr__(self):
         """return a string representating the nodict contents"""
 
-        return '\n'.join([f'{self.__class__.__name__}.{i}:{bucket}' for i, bucket in enumerate(self.buckets)])
+        return '\n'.join([f'{self.__class__.__name__}.{i}:{bucket}'
+                          for i, bucket in enumerate(self.buckets)])
 
     def add(self, key, value):
-        """"This class method should accept a new key and value, and store it into the `NoDict` instance."""
+        """"This class method should accept a new key and value,
+        and store it into the `NoDict` instance."""
         # Your code here
         new_node = Node(key, value)
         index = hash(new_node) % self.num_buckets
