@@ -52,7 +52,8 @@ class NoDict:
         if new_node in self.buckets[index]:
             instance = self.buckets[index].index(new_node)
             self.buckets[index][instance] = new_node
-        self.buckets[index].append(new_node)
+        else:
+            self.buckets[index].append(new_node)
 
         #     self.buckets[index].append(new_node)
         # else:
